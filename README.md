@@ -1,4 +1,5 @@
 # EXPORT MEDIAPIPE TO DLL
+尚未上生产，注意安全
 
 **make sure you can compile mediapipe successfully**
 
