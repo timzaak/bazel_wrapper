@@ -1,0 +1,3 @@
+[submodule "lib/midiapipe"]
+	path = lib/midiapipe
+	url = https://github.com/google/mediapipe.git
