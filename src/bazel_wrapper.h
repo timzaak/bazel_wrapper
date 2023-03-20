@@ -1,10 +1,19 @@
 #pragma once
 
-#ifdef COMPILING_DLL
-#define DLLEXPORT __declspec(dllexport)
+#if defined(_MSC_VER)
+#define SYMBOL_EXPORT __declspec(dllexport)
+#elif defined(__GNUC__)
+#define SYMBOL_EXPORT __attribute__((visibility("default")))
 #else
-#define DLLEXPORT __declspec(dllimport)
+#define SYMBOL_EXPORT
 #endif
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-extern "C" DLLEXPORT void hello_world();
+SYMBOL_EXPORT void hello_world();
+
+#ifdef __cplusplus
+}
+#endif
